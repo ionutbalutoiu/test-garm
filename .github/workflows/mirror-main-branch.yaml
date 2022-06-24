@@ -23,5 +23,5 @@ jobs:
             CHECKOUT_OPTS="-b"
           fi
           git checkout $CHECKOUT_OPTS master
-          git rebase origin main
+          git rebase main
           git push origin master
