@@ -19,6 +19,7 @@ jobs:
       - name: Mirror to master branch
         run: |
           set -e
+          git fetch origin
           if ! git show-ref --quiet master; then
             CHECKOUT_OPTS="-b"
           fi
