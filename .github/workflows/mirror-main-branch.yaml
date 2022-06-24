@@ -5,15 +5,16 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
-  master-mirror:
+  master:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Mirror main branch to master branch
+      - name: Mirror to master branch
         run: "git checkout -b master && git push origin master"
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
